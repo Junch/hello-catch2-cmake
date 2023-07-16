@@ -3,9 +3,9 @@
 This example is a complete quick-start for cmake with catch2 integration. If you have catch2 installed, then just run:
 
 ```bash
-cmake -Bbuild -H.
-cmake --build build
-cmake --build build --target test
+cmake -B_build64 -H. -A x64
+cmake --build _build64
+ctest --test-dir _build64 -C Debug
 ```
 
 ## Installing catch2 cmake helpers
@@ -20,5 +20,4 @@ cmake -Bbuild -H. -DBUILD_TESTING=OFF
 sudo cmake --build build --target install
 ```
 
-
-
+上面安装catch2的办法对于 windows 开发环境并不适用。我是直接将catch.hpp下载到test目录。
